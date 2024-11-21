@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+h1 {
+    font-size: 50px;
+    font-weight: 400;
+}
+.card-container {
+    width: 90vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    flex-wrap: nowrap;
+    padding: 0px 8px;
+    
+}
+.card-container .card {
+    height: 600px;
+    width: auto;
+    flex-basis: 80px;
+    width: 100%;
+    position: relative;
+    transition: 0.5s linear;
+    box-shadow: 2px 2px 7px black;
+    border-radius: 35px;
+    overflow: hidden;
+    
+}
+.card-container .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.card-container .card .desc {
+    font-size: 32px;
+    position: absolute;
+    bottom: 90px;
+    left: 30px;
+    color: white;
+    text-transform: capitalize;
+    opacity: 0;
+    transition: 0.5s linear;
+}
+.card-container .card .desc button {
+    padding: 6px 8px;
+    background-color: lightblue;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.card-container  .active {
+    flex-basis: 80%;
+    filter: drop-shadow(10px);
+}
+.card-container  .active .desc {
+    opacity: 1;
+}
+
+.card-container .card:nth-child(1) {
+    align-self: flex-start;
+}
+
+.card-container .card:nth-child(3) {
+    align-self: flex-end;
+}
+.card-container .card:nth-child(4) {
+    align-self: center;
+}
+.card-container .card:nth-child(5) {
+    align-self: flex-start;
+}
+
+@media only screen and (max-width: 500px) {
+    .card-container {
+        height: auto;
+    }
+   .card-container .card {
+    flex-basis: 50px;
+   }
+   .card-container .active {
+    flex-basis: 400px;
+   }
+    .card-container .none {
+        display: none;
+    }
+}
